@@ -188,11 +188,11 @@ mode "move" {
 bindsym $mod+m focus floating; mode "move"
 
 # window colours
-set $bg-color 	         #001420
-set $inactive-bg-color   #06202F
-set $text-color          #FBF7F5
-set $inactive-text-color #384B54
-set $urgent-bg-color     #FF2027
+set $bg-color 	         #1D1F21
+set $inactive-bg-color   #3D3D3D
+set $text-color          #EEEEEE
+set $inactive-text-color #83887D
+set $urgent-bg-color     #CC6C52
 
 # window colors
 #                       border              background         text                 indicator
@@ -209,7 +209,7 @@ bar {
 	height 25
 	colors {
 		background $bg-color
-	    	separator #384B54
+	    	separator #788783
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $bg-color 	      $bg-color 	 $inactive-text-color
@@ -225,22 +225,21 @@ bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle #Toggle mute
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 #Decrease brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 #Increase brightness
-bindcode 172 exec playerctl play-pause #Toggle play-pause
+bindsym XF86AudioPlay exec playerctl play-pause #Toggle play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AuidoPrev exec playerctl previous
-
 
 # gaps
 for_window [class="^.*"] border pixel 1
 for_window [class=albert] border pixel 0
-gaps inner 10
-gaps outer 5
+gaps inner 5
+gaps outer 2
 
 workspace $workspace2 gaps inner 0
 workspace $workspace2 gaps outer 0
 
 
-set $wall = /home/raggabrash/Pictures/Wallpapers/wallpaper-spaceship.jpg 
+set $wall = /home/raggabrash/Pictures/Wallpapers/zentree.png
 
 # i3 lock
 bindsym $mod+Shift+x exec --no-startup-id exec i3lock -ec 1d1f21 
